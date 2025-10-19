@@ -267,7 +267,33 @@ export class DataSPAInspector extends LitElement {
     };
   }
 
-  highlightSignal(signal: any) {
+  scrollToSignal(signal: string) {
+    return (evt: MouseEvent) => {
+      if (!evt.shiftKey) return;
+
+      evt.stopPropagation();
+      evt.preventDefault();
+      const xpath = `//*[ @*[starts-with(name(), 'data-') and contains(., '$${signal}')] ]`;
+      const snapshot = document.evaluate(
+        xpath,
+        document,
+        null,
+        XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+        null
+      );
+
+      const results = [];
+      for (let i = 0; i < snapshot.snapshotLength; i++) {
+        results.push(snapshot.snapshotItem(i));
+        // Apply highlight class
+        const element = snapshot.snapshotItem(i) as HTMLElement;
+        element.scrollIntoView({behavior: 'smooth', block: 'center'});
+        break;
+      }
+    };
+  }
+
+  highlightSignal(signal: string) {
     return () => {
       // this.dispatchEvent(new CustomEvent('dataspa-highlight-signal', { detail: signal }))
 
@@ -291,8 +317,8 @@ export class DataSPAInspector extends LitElement {
   }
 
   unhighlightSignal() {
-    let elements = document.getElementsByClassName(this.highlightClassName);
-    let elems = Array.from(elements);
+    const elements = document.getElementsByClassName(this.highlightClassName);
+    const elems = Array.from(elements);
     for (const element of elems) {
       element.classList.remove(this.highlightClassName);
     }
@@ -496,6 +522,7 @@ ${JSON.stringify(this.signals, null, 2)}
                         @touchstart="${this.highlightSignal(key[0])}"
                         @mouseenter="${this.highlightSignal(key[0])}"
                         @mouseleave="${this.unhighlightSignal}"
+                        @click="${this.scrollToSignal(key[0])}"
                       >
                         <td>${key[0]}</td>
                         <td>

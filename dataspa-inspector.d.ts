@@ -22,7 +22,8 @@ export declare class DataSPAInspector extends LitElement {
     replayEvent(sseEvent: DSSSEEvent): (_: Event) => void;
     sendToConsole(signal: any): (evt: Event) => void;
     sendToClipboard(signal: any): (evt: Event) => void;
-    highlightSignal(signal: any): () => void;
+    scrollToSignal(signal: string): (evt: MouseEvent) => void;
+    highlightSignal(signal: string): () => void;
     unhighlightSignal(): void;
     signalDetails(signal: DSSSEEvent): string;
     documentFragmentFromEvent(event: DSSSEEvent): DocumentFragment | null;

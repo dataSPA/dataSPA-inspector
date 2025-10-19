@@ -6,6 +6,22 @@ found in the Pro version of Datastar.
 
 The inspector will show the current state of dataSPA/datastar signals on the page and also show signal and element patch events received from the server.
 
+## Features
+
+### Show page signals
+
+Show the current value of the various signals. Mouse over the signal name to highlight the elements where the signal is used. Shift-click on the signal name to scroll the first matching element into view.
+
+Toggle between table and object view.
+
+### Show signal patch events from the server
+
+See the patch event. Send it to the console, copy it to the clipboard, or replay the event.
+
+### Show element patch events from the server
+
+See the patch event. Send it to the console, copy it to the clipboard, or replay the event.
+
 ## Usage
 
 To use the inspector, include the following script tag in your page `<head>`:
