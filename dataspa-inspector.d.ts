@@ -8,6 +8,7 @@ type DSSSEEvent = {
 };
 export declare class DataSPAInspector extends LitElement {
     signals: {};
+    show: boolean;
     panel: string;
     highlightClassName: string;
     elementPatchEvents: DSSSEEvent[];

@@ -1,11 +1,13 @@
 import {LitElement, html, css, nothing} from 'lit';
 import {customElement, property, state} from 'lit/decorators.js';
 import {map} from 'lit/directives/map.js';
+import {miniIcon} from './icon';
 import {
   bracketsIcon,
   clipboardIcon,
   consoleIcon,
   htmlIcon,
+  minimiseIcon,
   replayIcon,
   serverSignalsIcon,
   signalsIcon,
@@ -31,6 +33,9 @@ export class DataSPAInspector extends LitElement {
   // sortContainer!: HTMLElement
 
   @property({type: Object}) signals = {};
+
+  @state()
+  show = false;
 
   @state()
   panel = 'signals';
@@ -73,6 +78,18 @@ export class DataSPAInspector extends LitElement {
   }
 
   static override styles = css`
+    .minified {
+      position: fixed;
+      bottom: 5px;
+      right: 5px;
+      opacity: 0.85;
+      z-index: 1000;
+    }
+    .minified img {
+      width: 50px;
+      border-radius: 50%;
+      border: 3px solid rgba(200, 200, 200, 1);
+    }
     .signals-footer {
       cursor: pointer;
       display: flex;
@@ -80,6 +97,11 @@ export class DataSPAInspector extends LitElement {
       gap: 5px;
       padding-top: 5px;
     }
+
+    #minimise-icon {
+      transform: scaleX(-1);
+    }
+
     .active {
       background-color: #d55634;
       border: none;
@@ -108,6 +130,7 @@ export class DataSPAInspector extends LitElement {
       opacity: 0.9;
       border-radius: 0.5rem;
       max-width: 50vw;
+      z-index: 1000;
     }
 
     header {
@@ -118,6 +141,9 @@ export class DataSPAInspector extends LitElement {
     }
     footer {
       padding: 0 5px 0.5rem 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .nav {
@@ -581,6 +607,13 @@ ${JSON.stringify(this.signals, null, 2)}
   }
 
   protected override render() {
+    if (!this.show) {
+      return html`
+        <div class="minified" @click="${() => (this.show = true)}">
+          <img src="data:image/webp;base64,${miniIcon}" />
+        </div>
+      `;
+    }
     let panel: Function;
     let footer: Function;
     switch (this.panel) {
@@ -628,7 +661,12 @@ ${JSON.stringify(this.signals, null, 2)}
         <hr />
         ${panel()}
         <hr />
-        <footer>${footer()}</footer>
+        <footer>
+          <div>${footer()}</div>
+          <div id="minimise-icon" @click=${() => (this.show = false)}>
+            ${minimiseIcon}
+          </div>
+        </footer>
       </div>
     `;
   }

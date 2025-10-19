@@ -7,7 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { LitElement, html, css, nothing } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { map } from 'lit/directives/map.js';
-import { bracketsIcon, clipboardIcon, consoleIcon, htmlIcon, replayIcon, serverSignalsIcon, signalsIcon, tableIcon, toggleOffIcon, toggleOnIcon, } from './snippets';
+import { miniIcon } from './icon';
+import { bracketsIcon, clipboardIcon, consoleIcon, htmlIcon, minimiseIcon, replayIcon, serverSignalsIcon, signalsIcon, tableIcon, toggleOffIcon, toggleOnIcon, } from './snippets';
 const DATASPA_FETCH_EVENT = 'datastar-fetch';
 let DataSPAInspector = class DataSPAInspector extends LitElement {
     constructor() {
@@ -15,6 +16,7 @@ let DataSPAInspector = class DataSPAInspector extends LitElement {
         // sortContainer!: HTMLElement
         super(...arguments);
         this.signals = {};
+        this.show = false;
         this.panel = 'signals';
         this.highlightClassName = '__dataSPAHighlight';
         this.elementPatchEvents = [];
@@ -372,6 +374,13 @@ ${JSON.stringify(this.signals, null, 2)}
     `;
     }
     render() {
+        if (!this.show) {
+            return html `
+        <div class="minified" @click="${() => (this.show = true)}">
+          <img src="data:image/webp;base64,${miniIcon}" />
+        </div>
+      `;
+        }
         let panel;
         let footer;
         switch (this.panel) {
@@ -419,12 +428,29 @@ ${JSON.stringify(this.signals, null, 2)}
         <hr />
         ${panel()}
         <hr />
-        <footer>${footer()}</footer>
+        <footer>
+          <div>${footer()}</div>
+          <div id="minimise-icon" @click=${() => (this.show = false)}>
+            ${minimiseIcon}
+          </div>
+        </footer>
       </div>
     `;
     }
 };
 DataSPAInspector.styles = css `
+    .minified {
+      position: fixed;
+      bottom: 5px;
+      right: 5px;
+      opacity: 0.85;
+      z-index: 1000;
+    }
+    .minified img {
+      width: 50px;
+      border-radius: 50%;
+      border: 3px solid rgba(200, 200, 200, 1);
+    }
     .signals-footer {
       cursor: pointer;
       display: flex;
@@ -432,6 +458,11 @@ DataSPAInspector.styles = css `
       gap: 5px;
       padding-top: 5px;
     }
+
+    #minimise-icon {
+      transform: scaleX(-1);
+    }
+
     .active {
       background-color: #d55634;
       border: none;
@@ -460,6 +491,7 @@ DataSPAInspector.styles = css `
       opacity: 0.9;
       border-radius: 0.5rem;
       max-width: 50vw;
+      z-index: 1000;
     }
 
     header {
@@ -470,6 +502,9 @@ DataSPAInspector.styles = css `
     }
     footer {
       padding: 0 5px 0.5rem 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .nav {
@@ -538,6 +573,9 @@ DataSPAInspector.styles = css `
 __decorate([
     property({ type: Object })
 ], DataSPAInspector.prototype, "signals", void 0);
+__decorate([
+    state()
+], DataSPAInspector.prototype, "show", void 0);
 __decorate([
     state()
 ], DataSPAInspector.prototype, "panel", void 0);

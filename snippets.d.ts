@@ -8,5 +8,6 @@ declare const replayIcon: import("lit-html").TemplateResult<1>;
 declare const htmlIcon: import("lit-html").TemplateResult<1>;
 declare const serverSignalsIcon: import("lit-html").TemplateResult<1>;
 declare const signalsIcon: import("lit-html").TemplateResult<1>;
-export { clipboardIcon, consoleIcon, tableIcon, toggleOffIcon, toggleOnIcon, bracketsIcon, replayIcon, htmlIcon, serverSignalsIcon, signalsIcon, };
+declare const minimiseIcon: import("lit-html").TemplateResult<1>;
+export { bracketsIcon, clipboardIcon, consoleIcon, htmlIcon, minimiseIcon, replayIcon, serverSignalsIcon, signalsIcon, tableIcon, toggleOffIcon, toggleOnIcon, };
 //# sourceMappingURL=snippets.d.ts.map

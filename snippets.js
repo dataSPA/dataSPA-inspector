@@ -1,26 +1,47 @@
 import { html } from 'lit';
 const bracketsIcon = html `
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
     <path
       fill="currentColor"
       d="M4 7v2c0 .55-.45 1-1 1s-1 .45-1 1v2c0 .55.45 1 1 1s1 .45 1 1v2c0 1.66 1.34 3 3 3h2c.55 0 1-.45 1-1s-.45-1-1-1H7c-.55 0-1-.45-1-1v-2c0-1.3-.84-2.42-2-2.83v-.34C5.16 11.42 6 10.3 6 9V7c0-.55.45-1 1-1h2c.55 0 1-.45 1-1s-.45-1-1-1H7C5.34 4 4 5.34 4 7m17 3c-.55 0-1-.45-1-1V7c0-1.66-1.34-3-3-3h-2c-.55 0-1 .45-1 1s.45 1 1 1h2c.55 0 1 .45 1 1v2c0 1.3.84 2.42 2 2.83v.34c-1.16.41-2 1.52-2 2.83v2c0 .55-.45 1-1 1h-2c-.55 0-1 .45-1 1s.45 1 1 1h2c1.66 0 3-1.34 3-3v-2c0-.55.45-1 1-1s1-.45 1-1v-2c0-.55-.45-1-1-1"
     />
   </svg>
 `;
-const toggleOnIcon = html ` <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+const toggleOnIcon = html ` <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+>
   <path
     fill="currentColor"
     d="M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5M7 15c-1.66 0-3-1.34-3-3s1.34-3 3-3s3 1.34 3 3s-1.34 3-3 3"
   />
 </svg>`;
-const toggleOffIcon = html ` <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+const toggleOffIcon = html ` <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+>
   <path
     fill="currentColor"
     d="M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5m0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3s3 1.34 3 3s-1.34 3-3 3"
   />
 </svg>`;
 const tableIcon = html `
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+  >
     <path
       stroke-linecap="round"
       stroke-linejoin="round"
@@ -29,7 +50,13 @@ const tableIcon = html `
   </svg>
 `;
 const clipboardIcon = html `
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+  >
     <path
       stroke-linecap="round"
       stroke-linejoin="round"
@@ -38,7 +65,13 @@ const clipboardIcon = html `
   </svg>
 `;
 const consoleIcon = html `
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+  >
     <path
       stroke-linecap="round"
       stroke-linejoin="round"
@@ -47,7 +80,12 @@ const consoleIcon = html `
   </svg>
 `;
 const replayIcon = html `
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+  >
     <path
       fill="currentColor"
       d="M4.255 6a7 7 0 1 1-1.242 3.568A.53.53 0 0 0 2.5 9a.474.474 0 0 0-.48.435q-.018.28-.02.565a8 8 0 1 0 1.5-4.665V3.5a.5.5 0 0 0-1 0v3A.5.5 0 0 0 3 7h3a.5.5 0 0 0 0-1zm5.236.88A1 1 0 0 0 8 7.751v4.501a1 1 0 0 0 1.49.872l3.998-2.25a1 1 0 0 0 0-1.743z"
@@ -55,7 +93,12 @@ const replayIcon = html `
   </svg>
 `;
 const htmlIcon = html `
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
     <path
       fill="currentColor"
       d="m12.89 3l1.96.4L11.11 21l-1.96-.4zm6.7 9L16 8.41V5.58L22.42 12L16 18.41v-2.83zM1.58 12L8 5.58v2.83L4.41 12L8 15.58v2.83z"
@@ -63,7 +106,12 @@ const htmlIcon = html `
   </svg>
 `;
 const serverSignalsIcon = html `
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+  >
     <path
       fill="currentColor"
       fill-rule="evenodd"
@@ -72,7 +120,12 @@ const serverSignalsIcon = html `
   </svg>
 `;
 const signalsIcon = html `
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
     <g fill="none" stroke="currentColor" stroke-width="1.5">
       <path d="M9 10.03A3.515 3.515 0 0 1 13.97 15" />
       <path
@@ -86,5 +139,26 @@ const signalsIcon = html `
     </g>
   </svg>
 `;
-export { clipboardIcon, consoleIcon, tableIcon, toggleOffIcon, toggleOnIcon, bracketsIcon, replayIcon, htmlIcon, serverSignalsIcon, signalsIcon, };
+const minimiseIcon = html `
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="14"
+    height="16"
+    viewBox="0 0 14 16"
+  >
+    <path
+      fill="currentColor"
+      d="M5.5 10a.47.47 0 0 1-.35-.15c-.2-.2-.2-.51 0-.71l6.5-6.49c.2-.2.51-.2.71 0s.2.51 0 .71l-6.5 6.5c-.1.1-.23.15-.35.15Z"
+    />
+    <path
+      fill="currentColor"
+      d="M9.5 10h-4c-.28 0-.5-.22-.5-.5v-4c0-.28.22-.5.5-.5s.5.22.5.5V9h3.5c.28 0 .5.22.5.5s-.22.5-.5.5"
+    />
+    <path
+      fill="currentColor"
+      d="M11.5 14h-9c-.83 0-1.5-.67-1.5-1.5v-9C1 2.67 1.67 2 2.5 2h5c.28 0 .5.22.5.5s-.22.5-.5.5h-5c-.28 0-.5.22-.5.5v9c0 .28.22.5.5.5h9c.28 0 .5-.22.5-.5v-5c0-.28.22-.5.5-.5s.5.22.5.5v5c0 .83-.67 1.5-1.5 1.5"
+    />
+  </svg>
+`;
+export { bracketsIcon, clipboardIcon, consoleIcon, htmlIcon, minimiseIcon, replayIcon, serverSignalsIcon, signalsIcon, tableIcon, toggleOffIcon, toggleOnIcon, };
 //# sourceMappingURL=snippets.js.map
