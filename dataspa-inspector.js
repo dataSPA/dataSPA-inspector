@@ -12,8 +12,6 @@ import { bracketsIcon, clipboardIcon, consoleIcon, htmlIcon, minimiseIcon, repla
 const DATASPA_FETCH_EVENT = 'datastar-fetch';
 let DataSPAInspector = class DataSPAInspector extends LitElement {
     constructor() {
-        // @query('#sortable-container')
-        // sortContainer!: HTMLElement
         super(...arguments);
         this.signals = {};
         this.show = false;
@@ -63,7 +61,7 @@ let DataSPAInspector = class DataSPAInspector extends LitElement {
             document.head.appendChild(style);
         }
         document.addEventListener(DATASPA_FETCH_EVENT, this.datastarFetchHandler);
-        this.setAttribute('data-attr-signals', '$');
+        this.setAttribute('data-attr:signals', '$');
     }
     replayEvent(sseEvent) {
         return (_) => {

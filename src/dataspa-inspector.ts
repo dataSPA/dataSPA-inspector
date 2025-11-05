@@ -29,9 +29,6 @@ type DSSSEEvent = {
 
 @customElement('dataspa-inspector')
 export class DataSPAInspector extends LitElement {
-  // @query('#sortable-container')
-  // sortContainer!: HTMLElement
-
   @property({type: Object}) signals = {};
 
   @state()
@@ -74,7 +71,7 @@ export class DataSPAInspector extends LitElement {
       DATASPA_FETCH_EVENT,
       this.datastarFetchHandler as EventListener
     );
-    this.setAttribute('data-attr-signals', '$');
+    this.setAttribute('data-attr:signals', '$');
   }
 
   static override styles = css`
